@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Operatii aritmetice simple</title>
+  <style>
+    /* Stilurile CSS pentru a face pagina responsive */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .input-container {
+      margin-bottom: 10px;
+    }
+    
+    .input-container label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .input-container input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+    
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Operatii aritmetice simple</h1>
+  
+  <div class="input-container">
+    <label for="numar1">Primul număr:</label>
+    <input type="number" id="numar1">
+  </div>
+  
+  <div class="input-container">
+    <label for="operatie">Operație (+, -, *, /):</label>
+    <input type="text" id="operatie">
+  </div>
+  
+  <div class="input-container">
+    <label for="numar2">Al doilea număr:</label>
+    <input type="number" id="numar2">
+  </div>
+  
+  <button onclick="calculeaza()">Calculează</button>
+  
+  <div class="result" id="rezultat"></div>
+  
+  <script>
+    function calculeaza() {
+      var primulNumar = parseFloat(document.getElementById("numar1").value);
+      var operatie = document.getElementById("operatie").value;
+      var alDoileaNumar = parseFloat(document.getElementById("numar2").value);
+
+      var rezultat;
+
+      switch (operatie) {
+        case "+":
+          rezultat = primulNumar + alDoileaNumar;
+          break;
+        case "-":
+          rezultat = primulNumar - alDoileaNumar;
+          break;
+        case "*":
+          rezultat = primulNumar * alDoileaNumar;
+          break;
+        case "/":
+          rezultat = primulNumar / alDoileaNumar;
+          break;
+        default:
+          rezultat = "Operație invalidă";
+      }
+
+      document.getElementById("rezultat").textContent = "Rezultat: " + rezultat;
+    }
+  </script>
+</body>
+</html>
